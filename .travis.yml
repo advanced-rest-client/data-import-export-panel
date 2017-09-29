@@ -6,13 +6,18 @@ addons:
   sauce_connect: true
 script:
 - npm run lint
-- polymer test --plugin sauce --job-name "data-import-export-panel:${TRAVIS_BRANCH}" --build-number=${TRAVIS_BUILD_NUMBER}
+- polymer test --plugin sauce --job-name "data-import-export-panel:${TRAVIS_BRANCH}"
+  --build-number=${TRAVIS_BUILD_NUMBER}
 cache:
   directories:
   - node_modules
 branches:
   only:
-    - stage
-    - develop
+  - stage
+  - develop
 after_success:
-  - node tasks/ci.js
+- node tasks/ci.js
+env:
+  global:
+  - secure: iliqZj3CEHZTxclBAaGQxN5Dum2tlyysATLX6aIWXm6hdmlvwrXz9wiL/OXkdkL02RnFyUTzGo9BkPagREEGHnOYq2BVgVcZgyjJSazhKXNSvweTUObl53UYCCfW6UWtuZr22nY5nZrQxotVXDgadiRf/IVbqOD1CFUsHI9fz9V+Y2CBBLcOszAscwy5Li7h8lKmVwQR5lKWbGHC+ABP7b6zNRm3Dk7XzaYQxKvwgDGARLGsSy/rCT3G9KdeJwjcxfhcPKJGYG7c2eGjOm50t6iNw/mZJRVQrm4HILqWH3gsilqPL7pVeL2phDfGtJXnKf7MNaGHwzVMvGg78hO2ijphMBLoVew9nVMUXW4XK8WYauM0Ay3/rRoUVFdLwm4rMcWDmvdsiyI2QgVz9tdSa6nH2fu71nljXYadVVKwpSBbLpErPKywFaW17zSTFuUEFOw8qpRv1shyqaXiDQy6mT6JKTU8bQL7sNLMeTiJakXW1zV/gMRkSimjii+3A5qC0ZG/Rh7zF4K7w1IlnKQFI4fRFVgPfjggnzHNCvzvt6qKiIXt+jDCJy6+dwXyqX54d2dznwoQFNSuWFpFsFiqhTEWpPYnZ4LDP4HTbt6PeucFQJUziZq316YP+tsPkxeeBx0ohNtxum5/XGU8jxT1MV6/RsN9qBDjklfWPOo+8pw=
+  - secure: cya5SfYk0msO4A5SQm6sWsbD5WY11w0lZhrE0TzYb2DYuVnJRSAJSUVM1BCxs1LNvTjzTw9htInqIGZAZ3aXgaE/hS5Vy5svgBK+w7wtDYHAX5kY8Wl9e9de19FrFbO7V27EkByY1ZlU9ZAmRRmHgj+rx6Jagmavz2OZpMeqcsxCckmGn3Gq4BlfOEQU6mujzrDoEBQKP66WuUhFx4Bl6kkrw49vyxz5NvIlPYv3p/AAn+jv+YpnjrBP06hrPTnFUzypRZ0cUBDkdLFm9M/rdd8aJuqc5WVw6CLDrqMhf4lU+/NdcVXOijWaHn22vpFpt8Nn3rGW4jVt6Rfhl0hUyMKGnDoGJRwk06ytLQ4qZeH3Ps3v80VnUULfAnYvK3fquJUCcGFt83OGm04Oi7bR1CzylqZkgnMcRHylwYSrAjit+ojG38ZMrtyTTcFA/3gnQ1MTWc4DR3FNGCtsL4LAe7WEzS8VFK8O8wYZc/Iu6Khu72P1NhW3DdVa3uAE3go/OslY+2WUjVY0KY02yZK9vk86BgsVenP1gmwzS8fPqRC8zRnUFFLqdpN+NHE+aYG6J+rKgwcfaZCGQb2Zvy2A51WEurUiCcSYCf6Pdf5IBRQRQJiiWKLM2BqtqwbUTaOOtb7VBuC0qqioTV5+4pC1HiBWu8RylUPBExj3zSTmBwU=
