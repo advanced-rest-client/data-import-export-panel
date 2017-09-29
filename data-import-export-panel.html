@@ -44,6 +44,10 @@ Custom property | Description | Default
       @apply --data-import-export-panel;
     }
 
+    :host([auto-height]) import-panel {
+      height: auto;
+    }
+
     [hidden] {
       display: none !important;
     }
@@ -70,7 +74,16 @@ Custom property | Description | Default
       // True to hide import panel
       hideImport: Boolean,
       // True to hide export panel
-      hideExport: Boolean
+      hideExport: Boolean,
+      /**
+       * Controlls import panel's height property.
+       * Because drive selector must be sized manually when the import panel
+       * displays the drive selector is thould inherit height from the parent.
+       */
+      autoHeight: {
+        type: Boolean,
+        reflectToAttribute: true
+      }
     },
 
     observers: [
@@ -78,12 +91,16 @@ Custom property | Description | Default
     ],
     // Computes hidden state for panels when page changes
     _pageChanged: function(importPage, exportPage) {
+      this.autoHeight = true;
       if (importPage === 0 && exportPage === 0) {
         this.hideImport = false;
         this.hideExport = false;
         return;
       }
       if (importPage !== 0) {
+        if (importPage === 1) {
+          this.autoHeight = false;
+        }
         this.hideExport = true;
       } else if (exportPage !== 0) {
         this.hideImport = true;
