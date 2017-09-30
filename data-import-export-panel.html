@@ -56,7 +56,7 @@ Custom property | Description | Default
       margin-top: 40px;
     }
     </style>
-    <import-panel selected-page="{{importPage}}" api-key="[[apiKey]]" hidden$="[[hideImport]]"></import-panel>
+    <import-panel selected-page="{{importPage}}" api-key="[[apiKey]]" hidden$="[[hideImport]]" data="{{importObject}}"></import-panel>
     <export-panel selected-page="{{exportPage}}" hidden$="[[hideExport]]"></export-panel>
   </template>
   <script>
@@ -83,7 +83,9 @@ Custom property | Description | Default
       autoHeight: {
         type: Boolean,
         reflectToAttribute: true
-      }
+      },
+      // Normalized ARC import object
+      importObject: Object
     },
 
     observers: [
