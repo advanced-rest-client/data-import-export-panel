@@ -1,3 +1,13 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/advanced-rest-client/data-import-export-panel/compare/0.1.3...0.1.4) (2017-09-30)
+
+
+### New
+
+* Added reference to the import object that is passed to the importer. ([041ac41de4a9bb54e490df5e25fa2e8cba85f8b2](https://github.com/advanced-rest-client/data-import-export-panel/commit/041ac41de4a9bb54e490df5e25fa2e8cba85f8b2))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/advanced-rest-client/data-import-export-panel/compare/0.1.2...0.1.3) (2017-09-29)
 
